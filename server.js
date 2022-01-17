@@ -6,7 +6,7 @@ const resultsRouter = require('./routes/results-router')
 const PORT = process.env.PORT || 5000
 
 // Mongo db link
-const db = 'mongodb+srv://StarScrap:Test101@cluster0.tyqpj.mongodb.net/danger-calculation?retryWrites=true&w=majority';
+const db = 'mongodb+srv://StarScrap:<password>@cluster0.tyqpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 const app = express()
 
