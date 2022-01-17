@@ -1,0 +1,81 @@
+<mat-horizontal-stepper #stepper>
+
+  <!--Матриця парних порівнянь критеріїв-->
+
+  <mat-step>
+    <ng-template matStepLabel>Матриця парних порівнянь критеріїв</ng-template>
+    <div class="table-container">
+      <div class="f-items">
+      </div>
+      <div class="table-items">
+        <app-table-four #table_4></app-table-four>
+      </div>
+      <div class="table-items">
+        <button class="next-button" mat-icon-button matStepperNext>
+          <mat-icon class="next-icon">navigate_next</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-step>
+
+  <!--Матриця відношень R1-->
+
+  <mat-step>
+    <ng-template matStepLabel>Матриця відношень R1</ng-template>
+    <div class="table-container">
+      <div class="table-items">
+        <button class="back-button" mat-icon-button matStepperPrevious>
+          <mat-icon class="back-icon">navigate_before</mat-icon>
+        </button>
+      </div>
+      <div class="table-items">
+        <app-table-five #table_5></app-table-five>
+      </div>
+      <div class="table-items"><button class="next-button" mat-icon-button matStepperNext>
+          <mat-icon class="next-icon">navigate_next</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-step>
+
+  <!--Матриця відношень R2-->
+
+  <mat-step>
+    <ng-template matStepLabel>Матриця відношень R2</ng-template>
+    <div class="table-container">
+      <div class="table-items">
+        <button class="back-button" mat-icon-button matStepperPrevious>
+          <mat-icon class="back-icon">navigate_before</mat-icon>
+        </button>
+      </div>
+      <div class="table-items">
+        <app-table-six #table_6></app-table-six>
+      </div>
+      <div class="table-items"><button class="next-button" mat-icon-button matStepperNext>
+          <mat-icon class="next-icon">navigate_next</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-step>
+
+  <!--Матриця відношень R3-->
+
+  <mat-step>
+    <ng-template matStepLabel>Матриця відношень R3</ng-template>
+    <div class="table-container">
+      <div class="table-items">
+        <button class="back-button" mat-icon-button matStepperPrevious>
+          <mat-icon class="back-icon">navigate_before</mat-icon>
+        </button>
+      </div>
+      <div class="table-items">
+        <app-table-seven #table_7></app-table-seven>
+      </div>
+      <div class="table-items">
+        <button mat-raised-button class="next-button" class="result" (click)="openResultDialog()">
+          Результат
+        </button>
+      </div>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

@@ -1,0 +1,58 @@
+.mat-column-index {
+  width: 10%;
+  padding-right: 3vw;
+  text-align: center;
+  font-weight: bold;
+  border-right: 1px solid currentColor;
+}
+
+.mat-column-name {
+  width: 90%;
+  padding-left: 3vw;
+  text-align: start;
+}
+
+.dialog-button {
+  background-color: white;
+}
+
+.dialog-button:hover {
+  color: white;
+  background-color: #3f51b5;
+}
+
+.result-properties-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: normal;
+  align-content: stretch;
+}
+
+.result-properties:nth-child(1) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.result-properties:nth-child(2) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.result-properties:nth-child(3) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}

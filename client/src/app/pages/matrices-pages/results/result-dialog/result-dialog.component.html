@@ -1,0 +1,45 @@
+<div class="result-dialog-container">
+
+  <div class="result-dialog-items">
+    <h2 class="dialog-title" mat-dialog-title>Найбільш вагомі загрози ефективності СУОП підпртємства {{enterpriseName}}
+    </h2>
+  </div>
+
+  <div class="result-dialog-items">
+    <mat-form-field appearance="fill">
+      <input #input matInput [(ngModel)]="enterpriseName" placeholder="Подайте назву підпртємства">
+    </mat-form-field>
+  </div>
+
+  <div class="result-dialog-items">
+    <mat-dialog-content class="mat-typography">
+      <table mat-table [dataSource]="tableSource" class="table-1">
+
+        <!-- Index Column -->
+        <ng-container matColumnDef="index">
+          <th mat-header-cell *matHeaderCellDef> Xj </th>
+          <td mat-cell *matCellDef="let element"> {{element.index}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Загроза </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+      </table>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+
+      <button mat-raised-button type="submit" class="dialog-button" [disabled]="!enterpriseName || clicked"
+        (click)="postResult(); clicked = true; input.disabled = true">Зберегти</button>
+
+      <button mat-raised-button mat-dialog-close class="dialog-button">Закрити</button>
+
+    </mat-dialog-actions>
+  </div>
+</div>

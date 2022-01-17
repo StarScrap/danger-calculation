@@ -1,0 +1,62 @@
+<div class="site-container">
+  <div class="site-items">
+
+    <mat-toolbar color="primary" class="app-header">
+      <span class="nav-tool-items">
+        <div class="toolbar-container">
+          <div class="toolbar-items">
+            <button class="toolbar-link" type="button" aria-label="Toggle sidenav" mat-icon-button
+              (click)="opened = !opened" *ngIf="true">
+              <mat-icon class="menu-button" aria-label="Side nav toggle icon" *ngIf="!opened; else showCross">
+                menu
+              </mat-icon>
+              <ng-template #showCross>
+                <mat-icon class="menu-button" aria-label="Side nav toggle icon">close</mat-icon>
+              </ng-template>
+            </button>
+          </div>
+          <div class="toolbar-dialog-container">
+            <div class="toolbar-dialog-items">
+              <button mat-stroked-button class="toolbar-link" (click)="tableOneDialog()">Загрози</button>
+            </div>
+            <div class="toolbar-dialog-items">
+              <button mat-stroked-button class="toolbar-link" (click)="tableTwoDialog()">Зміст критерію</button>
+            </div>
+            <div class="toolbar-dialog-items">
+              <button mat-stroked-button class="toolbar-link" (click)="tableThreeDialog()">Шкала відносної важливості
+                критеріїв</button>
+            </div>
+          </div>
+          <div class="toolbar-exit-container">
+            <div class="toolbar-exit-items">
+              <button mat-stroked-button class="toolbar-link" routerLink="/login"
+                routerLinkActive="active" (click)="logout()">Вийти</button>
+            </div>
+          </div>
+        </div>
+      </span>
+    </mat-toolbar>
+  </div>
+
+  <div class="site-items">
+    <mat-drawer-container class="drawer-container">
+      <mat-drawer class="nav-content" mode="side" [(opened)]="opened">
+        <div class="sidebar-container">
+          <div class="sidebar-items">
+            <button mat-stroked-button class="sidebar-link" routerLink="/matrices"
+              routerLinkActive="active">Розрахункові таблиці</button>
+          </div>
+          <div class="sidebar-items">
+            <button mat-stroked-button class="sidebar-link" routerLink="/results" routerLinkActive="active">Журнал
+              результатів</button>
+          </div>
+        </div>
+      </mat-drawer>
+
+      <mat-drawer-content>
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="flex-container">
+  <div class="flex-items">
+    <table class="table table-striped">
+      <div class="result-container">
+        <mat-list>
+          <thead>
+            <div class="result-items" *ngIf="results.length !== 0">
+              <tr>
+                <mat-list-item>
+                  <div class="title-container">
+                    <th>
+                      <div class="title-items">
+                        <p>Назва підпртємства</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div class="title-items">
+                        <p>Дата виконання аудиту</p>
+                      </div>
+                    </th>
+                  </div>
+                </mat-list-item>
+              </tr>
+            </div>
+          </thead>
+          <mat-divider></mat-divider>
+          <tbody>
+
+            <div class="result-items">
+              <tr *ngFor="let result of results">
+                <mat-list-item>
+                  <div class="result-text-conteiner">
+                    <td>
+                      <div class="result-text-items">
+                        <p>{{result.enterpriseName}}</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="result-text-items">
+                        <p>{{result.date | date: 'dd/MM/yyyy'}}</p>
+                      </div>
+                    </td>
+                  </div>
+                  <div class="item-space"></div>
+                  <div class="result-button-conteiner">
+                    <td>
+                      <div class="result-button-items">
+                        <button mat-fab color="primary" class="delate-button" routerLink="/results"
+                          (click)="deleteResult(result._id, result.enterpriseName)">
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="result-button-items">
+                        <button mat-raised-button class="result-button"
+                          (click)="getResult(result._id, result.resultsList[0]); openResultsPropertiDeteils()">Деталі</button>
+                      </div>
+                    </td>
+                  </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+              </tr>
+            </div>
+          </tbody>
+        </mat-list>
+      </div>
+    </table>
+    <div class="result-items">
+    </div>
+  </div>
+  <div *ngIf="results.length == 0" class="result-empty" role="alert">
+    <p>Немає результатів!</p>
+  </div>
+</div>

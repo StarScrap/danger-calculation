@@ -1,0 +1,55 @@
+table,
+th,
+td {
+  border: 2px solid #616161;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  width: 20vh;
+  height: 15vh;
+}
+
+th {
+  color: #3f51b5;
+}
+
+input {
+  width: 96%;
+  height: 95%;
+  border: none;
+  font-size: large;
+  text-align: center;
+  color: #424242;
+  outline-color: #3f51b5;
+}
+
+.table-container {
+  height: 100vh;
+  padding-left: 17%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.table-items:nth-child(1) {
+  display: block;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: center;
+  order: 2;
+}
+
+.table-items:nth-child(2) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: center;
+  order: 2;
+}
